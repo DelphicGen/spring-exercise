@@ -9,7 +9,7 @@ import java.util.List;
 @Data
 @Builder
 public class AllOrdersResponse {
-    private List<OrderResponse> ordersList;
+    private List<OrderResponse> data;
     private Integer totalOrder;
     private Double allPrice;
 }

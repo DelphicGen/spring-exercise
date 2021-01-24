@@ -24,7 +24,7 @@ public class OrderServiceImpl implements OrderService {
         for(OrderResponse order : listOfOrder) {
             total += order.getTotalPrice();
         }
-        AllOrdersResponse allOrdersResponse = AllOrdersResponse.builder().ordersList(listOfOrder).totalOrder(listOfOrder.size()).allPrice(total).build();
+        AllOrdersResponse allOrdersResponse = AllOrdersResponse.builder().data(listOfOrder).totalOrder(listOfOrder.size()).allPrice(total).build();
         return allOrdersResponse;
     }
 
