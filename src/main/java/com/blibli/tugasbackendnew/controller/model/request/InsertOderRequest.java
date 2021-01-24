@@ -11,6 +11,5 @@ import java.util.List;
 @Builder
 public class InsertOderRequest {
     private List<OrderItem> orderItemList;
-//    private double totalPrice;
     private Customer customer;
 }
