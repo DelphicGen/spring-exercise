@@ -1,6 +1,7 @@
 package com.blibli.tugasbackendnew.controller;
 
 import com.blibli.tugasbackendnew.controller.model.request.InsertOderRequest;
+import com.blibli.tugasbackendnew.controller.model.response.AllOrdersResponse;
 import com.blibli.tugasbackendnew.controller.model.response.OrderResponse;
 import com.blibli.tugasbackendnew.entity.Order;
 import com.blibli.tugasbackendnew.service.impl.OrderServiceImpl;
@@ -16,7 +17,7 @@ public class OrderController {
     private OrderServiceImpl orderService;
 
     @GetMapping(value = "/order", produces = MediaType.APPLICATION_JSON_VALUE) // path
-    public List<OrderResponse> getOrder () {
+    public AllOrdersResponse getOrder () {
         return orderService.getOrder();
     }
 

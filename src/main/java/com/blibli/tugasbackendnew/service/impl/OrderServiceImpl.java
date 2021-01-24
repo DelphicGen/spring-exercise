@@ -1,6 +1,7 @@
 package com.blibli.tugasbackendnew.service.impl;
 
 import com.blibli.tugasbackendnew.controller.model.request.InsertOderRequest;
+import com.blibli.tugasbackendnew.controller.model.response.AllOrdersResponse;
 import com.blibli.tugasbackendnew.controller.model.response.OrderResponse;
 import com.blibli.tugasbackendnew.entity.OrderItem;
 import com.blibli.tugasbackendnew.service.OrderService;
@@ -17,8 +18,10 @@ public class OrderServiceImpl implements OrderService {
     ArrayList<OrderResponse> listOfOrder = new ArrayList<>();
 
     @Override
-    public List<OrderResponse> getOrder() {
-        return listOfOrder;
+    public AllOrdersResponse getOrder() {
+//        return banyaknya order juga untuk soal no 2
+        AllOrdersResponse allOrdersResponse = AllOrdersResponse.builder().ordersList(listOfOrder).totalOrder(listOfOrder.size()).build();
+        return allOrdersResponse;
     }
 
     @Override
