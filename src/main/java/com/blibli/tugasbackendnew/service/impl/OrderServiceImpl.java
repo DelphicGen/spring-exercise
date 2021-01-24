@@ -56,6 +56,18 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
+    public Double numberOfOrder() {
+        double total = 0;
+        for(OrderResponse order : listOfOrder) {
+            total += order.getTotalPrice();
+        }
+        return total;
+
+//        Maaf mas saya agak lupa maksud poin kedua itu totalPrice dijumlahkan semua atau banyaknya order, kalau mau banyaknya order bisa langsung return listOfOrder.size() mas
+//        return listOfOrder.size();
+    }
+
+    @Override
     public List<OrderResponse> getSortedOrder(String by) {
         ArrayList<OrderResponse> sortedListOfOrder = new ArrayList<>(listOfOrder);
 

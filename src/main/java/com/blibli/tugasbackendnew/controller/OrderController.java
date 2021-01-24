@@ -32,6 +32,11 @@ public class OrderController {
         return orderService.postOrder(orderRequest);
     }
 
+    @GetMapping(value = "/order/total", produces = MediaType.APPLICATION_JSON_VALUE) // path
+    public Double numberOfOrder () {
+        return orderService.numberOfOrder();
+    }
+
     @GetMapping(value = "/order/sortedbyname", produces = MediaType.APPLICATION_JSON_VALUE) // path
     public List<OrderResponse> getOrderSortedByCustomerName () {
         return orderService.getSortedOrder("name");
