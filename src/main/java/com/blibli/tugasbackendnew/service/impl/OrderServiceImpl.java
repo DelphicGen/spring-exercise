@@ -19,8 +19,12 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public AllOrdersResponse getOrder() {
-//        return banyaknya order juga untuk soal no 2
-        AllOrdersResponse allOrdersResponse = AllOrdersResponse.builder().ordersList(listOfOrder).totalOrder(listOfOrder.size()).build();
+//        return banyaknya order dan total semua price untuk soal no 2
+        double total = 0;
+        for(OrderResponse order : listOfOrder) {
+            total += order.getTotalPrice();
+        }
+        AllOrdersResponse allOrdersResponse = AllOrdersResponse.builder().ordersList(listOfOrder).totalOrder(listOfOrder.size()).allPrice(total).build();
         return allOrdersResponse;
     }
 

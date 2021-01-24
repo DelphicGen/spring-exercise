@@ -11,4 +11,5 @@ import java.util.List;
 public class AllOrdersResponse {
     private List<OrderResponse> ordersList;
     private Integer totalOrder;
+    private Double allPrice;
 }
